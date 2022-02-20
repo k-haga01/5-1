@@ -1,0 +1,35 @@
+必要な画面 = url = web.phpに書く要素
+
+・GET    /login
+・POST  /login
+
+・GET /
+
+・POST /tweet つぶやく
+・POST /delete
+
+url -> web.php -> controller -> blade -> html
+
+home
+
+- ヘッダー
+    - ユーザー名表示
+- つぶやき投稿
+    - tweet内容を送る
+    - tweet内容を受け取る
+        - POSTのパラメータを受け取る
+        - 受け取ったデータをDBに保存
+    - homeに戻ってくる
+- つぶやきリスト
+    - DBから取得
+    - bladeに埋め込む
+    - 自分のツイートの場合削除ボタン表示
+        - 自分のツイートの判定
+- つぶやきの削除
+    - 削除対象のtweetのidを送る
+    - DBで対象のtweetを削除
+    - homeに戻る
+
+
+認証なしでざっくりつぶやきリストとつぶやきの投稿をまず作る
+

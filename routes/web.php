@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+    Route::get('sns/create', 'Admin\TweetsController@add')->middleware('auth');
+    Route::post('sns/create', 'Admin\TweetsController@create');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
