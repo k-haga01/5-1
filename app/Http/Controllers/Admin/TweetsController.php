@@ -37,4 +37,11 @@ class TweetsController extends Controller
 
         return redirect('admin/sns/create');
     }
+    public function delete(Request $request)
+  {
+      $tweet = Tweet::find($request->id);
+
+      $tweet->delete();
+      return redirect('admin/sns/create');
+  }
 }

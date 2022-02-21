@@ -17,6 +17,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('sns/create', 'Admin\TweetsController@add')->middleware('auth');
     Route::post('sns/create', 'Admin\TweetsController@create');
+    Route::get('sns/delete', 'Admin\TweetsController@delete')->middleware('auth');
 });
 
 Auth::routes();
