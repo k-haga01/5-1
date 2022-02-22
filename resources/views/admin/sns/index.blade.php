@@ -38,17 +38,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($posts as $news)
+                            @foreach($posts as $tweet)
                                 <tr>
-                                    <th>{{ $news->id }}</th>
-                                    <td>{{ str_limit($news->title, 100) }}</td>
-                                    <td>{{ str_limit($news->body, 250) }}</td>
+                                    <th>{{ $tweet->id }}</th>
+                                    <td>{{ str_limit($tweet->title, 100) }}</td>
+                                    <td>{{ str_limit($tweet->body, 250) }}</td>
                                     <td>
                                         <div>
-                                            <a href="{{ action('Admin\NewsController@edit', ['id' => $news->id]) }}">編集</a>
-                                        </div>
-                                        <div>
-                                            <a href="{{ action('Admin\NewsController@delete', ['id' => $news->id]) }}">削除</a>
+                                            <a href="{{ action('Admin\TweetsController@delete', ['id' => $tweet->id]) }}">削除</a>
                                         </div>
                                     </td>
                                 </tr>
