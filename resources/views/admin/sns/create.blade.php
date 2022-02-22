@@ -56,11 +56,12 @@
                                         <td>{{ $tweet->created_at }}</td>
                                         <td>{{ str_limit($tweet->body, 250) }}</td>
                                         <td>
-                                        <div>
-                                        @if()
-                                            <a href="{{ action('Admin\TweetsController@delete', ['id' => $tweet->id]) }}">削除</a>
-                                        </div>
-                                    </td>
+                                            <div>
+                                                @if($current_user_id == $tweet->user_id)
+                                                <a href="{{ action('Admin\TweetsController@delete', ['id' => $tweet->id]) }}">削除</a>
+                                                @endif
+                                            </div>
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
