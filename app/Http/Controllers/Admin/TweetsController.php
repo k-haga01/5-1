@@ -31,7 +31,6 @@ class TweetsController extends Controller
 
         // ログインしているユーザー情報取得
         $auths = Auth::user();
-        dd($auths);
 
 
         // フォームから送信されてきた_tokenを削除する
